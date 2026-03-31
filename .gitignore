@@ -11,6 +11,27 @@ component/DAQLogger/DAQLoggerComp
 component/Merger/MergerComp
 component/Monitor/MonitorComp
 component/MznHRTdcReader1/MznHRTdcReader1Comp
+daq-mw-app/component/BestEffortDispatcher/BestEffortDispatcherComp
+daq-mw-app/component/DAQLogger/DAQLoggerComp
+daq-mw-app/component/Drs4QdcReader1/Drs4QdcReader1Comp
+daq-mw-app/component/Merger/MergerComp
+daq-mw-app/component/Monitor/MonitorComp
+daq-mw-app/component/MznHRTdcReader1/MznHRTdcReader1Comp
+daq-mw-app/component/MznHRTdcReader2/MznHRTdcReader2Comp
+daq-mw-app/component/MznHRTdcReader3/MznHRTdcReader3Comp
+
+# Build artifacts in daq-mw-app autogen
+daq-mw-app/component/*/autogen/*.cc
+daq-mw-app/component/*/autogen/*.hh
+daq-mw-app/component/*/autogen/*.cpp
+daq-mw-app/component/*/autogen/*.h
+daq-mw-app/component/*/autogen/*.o
+daq-mw-app/component/*/autogen/DAQService.idl
+
+# Standalone library build artifacts
+daq-mw-app/component/*/standalone/lib/
+daq-mw-app/component/*/standalone/src/*.o
+daq-mw-app/component/*/standalone/src/*.d
 
 # Build artifacts in autogen
 component/*/autogen/*.cc
