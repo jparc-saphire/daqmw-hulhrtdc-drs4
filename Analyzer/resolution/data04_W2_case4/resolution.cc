@@ -1,0 +1,143 @@
+#include "TFile.h"
+#include "TTree.h"
+#include "TCanvas.h"
+#include "TH1F.h"
+#include <fstream>   
+
+void resolution()
+{
+  TFile *fin = new TFile("../../test_run077.root");
+  TTree *tree = (TTree*)fin->Get("tree");
+
+  double amp1[16],amp2[16];
+  double ltdc1[16],ltdc2[16],ltdc3[16],ltdc4[16];
+  double ttdc1[16],ttdc2[16],ttdc3[16],ttdc4[16];
+
+  tree->SetBranchAddress("amp1", amp1);
+  tree->SetBranchAddress("amp2", amp2);
+  tree->SetBranchAddress("ltdc1", ltdc1);
+  tree->SetBranchAddress("ltdc2", ltdc2);
+  tree->SetBranchAddress("ltdc3", ltdc3);
+  tree->SetBranchAddress("ltdc4", ltdc4);
+  tree->SetBranchAddress("ttdc1", ttdc1);
+  tree->SetBranchAddress("ttdc2", ttdc2);
+  tree->SetBranchAddress("ttdc3", ttdc3);
+  tree->SetBranchAddress("ttdc4", ttdc4);
+
+  TH1F *hist[1];
+  hist[0] = new TH1F("h1", "TOF1", 300, -3, 3);
+
+  double a01,b01,c01;
+  double a02,b02,c02;
+  char check[256];
+  ifstream ifs1("corr1.dat");
+  
+  while(ifs1.getline(check,256)){
+    stringstream st1;
+    st1<<check;
+    if(strlen(check)==0) continue;
+    else{
+      st1 >> a01 >> b01 >> c01 
+	  >> a02 >> b02 >> c02; 
+    }
+  }
+  
+  cout<< a01 << "  " << b01 << "  " << c01 <<endl;
+  cout<< a02 << "  " << b02 << "  " << c02 <<endl;
+
+  double a11,b11,c11;
+  double a12,b12,c12;
+  char check2[256];
+  ifstream ifs2("corr2.dat");
+  
+  while(ifs2.getline(check2,256)){
+    stringstream st2;
+    st2<<check2;
+    if(strlen(check2)==0) continue;
+    else{
+      st2 >> a11 >> b11 >> c11 
+	  >> a12 >> b12 >> c12; 
+    }
+  }
+  
+  cout<< "****" << endl;
+  cout<< a11 << "  " << b11 << "  " << c11 << endl;
+  cout<< a12 << "  " << b12 << "  " << c12 << endl;
+
+  double a21,b21,c21;
+  double a22,b22,c22;
+  char check3[256];
+  ifstream ifs3("corr3.dat");
+  
+  while(ifs3.getline(check3,256)){
+    stringstream st3;
+    st3<<check3;
+    if(strlen(check3)==0) continue;
+    else{
+      st3 >> a21 >> b21 >> c21 
+	  >> a22 >> b22 >> c22; 
+    }
+  }
+  
+  cout<< "****" << endl;
+  cout<< a21 << "  " << b21 << "  " << c21 << endl;
+  cout<< a22 << "  " << b22 << "  " << c22 << endl;
+
+  int n = tree->GetEntries();
+  for(int i = 0; i<n; ++i){
+    tree->GetEntry(i); 
+    if(172.0<ltdc1[0]&&ltdc1[0]<182.0&&172.0<ltdc2[0]&&ltdc2[0]<182.0&& 
+       160.0<ltdc3[0]&&ltdc3[0]<170.0&&159.0<ltdc4[0]&&ltdc4[0]<169.0&&
+       150.0<ttdc3[0]&&ttdc3[0]<165.0&&151.0<ttdc4[0]&&ttdc4[0]<166.0){
+                  
+      double pe1 = 0.105*amp1[0]+0.97;
+      double pe2 = 0.102*amp2[0]+1.21;
+
+      double w1 = ltdc3[0]-ttdc3[0]-5.7;
+      double w2 = ltdc4[0]-ttdc4[0]-5.3;
+      
+      double T1 =  a01+b01*w1+c01*w1*w1;
+      double T2 =  a02+b02*w2+c02*w2*w2;
+      // double T1 =  a01+b01/pow(w1,0.5)+c01*(w1);
+      // double T2 =  a02+b02/pow(w2,0.5)+c02*(w2);
+
+      double TOFa = ((ltdc1[0]-ltdc2[0])+0.22)-T1;
+      double TOF1 = TOFa-T2;
+
+      double T11 =  a11+b11*w1+c11*w1*w1;
+      double T12 =  a12+b12*w2+c12*w2*w2;
+      // double T11 =  a11+b11/pow(w1,0.5)+c11*(w1);
+      // double T12 =  a12+b12/pow(w2,0.5)+c12*(w2);
+
+      double TOFa2 = TOF1-T11;
+      double TOF2  = TOFa2-T12;
+
+      double T21 =  a21+b21*w1+c21*w1*w1;
+      double T22 =  a22+b22*w2+c22*w2*w2;
+      // double T21 =  a21+b21/pow(w1,0.5)+c21*(w1);
+      // double T22 =  a22+b22/pow(w2,0.5)+c22*(w2);
+
+      double TOFa3 = TOF2-T21;
+      double TOF   = TOFa3-T22;
+
+      if( w1>0.0 && w2>0.0 && pe1>0.0 && pe2>0.0){
+	hist[0]->Fill(TOF+0.0);
+      }
+    }
+  }
+
+  TCanvas *c1 = new TCanvas("c1","c1");
+  c1->Divide(1,1);
+  for(int i=0; i<1; ++i)
+    {
+      c1->cd(i+1);
+      hist[i]->Draw();
+    }
+  
+  hist[0]->Fit("gaus","","",-0.30,0.30);
+
+  hist[0]->GetXaxis()->SetTitle("time[ns]");
+  hist[0]->GetYaxis()->SetTitle("counts");
+
+  c1 -> Print("resolution.pdf");
+}

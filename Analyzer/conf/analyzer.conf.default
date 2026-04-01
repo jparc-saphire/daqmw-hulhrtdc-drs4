@@ -1,0 +1,59 @@
+###
+# Conf.file
+###
+#------------------------------------
+####Counter Map
+#CMAP:  param/param_CounterMap_0
+#CMAP:  param/param_CounterMap_2
+CMAP:  param/param_CounterMap_3
+#
+####Settings
+#TDC data setting (always:1)
+HASTDC: 1
+#
+#------------------------------------
+####T0 analysis settings
+#Simple analysis (on = 1)
+T0SIMPLEANA: 0
+#
+#TDC cut for trigger (in UserMonitor)
+#T0RANGELOW:     0
+#T0RANGEHIGH:  180
+T0RANGELOW:   330
+T0RANGEHIGH:  410
+#
+#------------------------------------
+####DRS4 analysis settings
+#Peak search
+#PEAKSTART:  450
+#PEAKEND:    750
+#PEAKSTART:  350
+#up to run 5174 PEAKEND:    420
+#from 5175
+#PEAKEND:    440
+#default in Run0e
+#PEAKSTART:  200
+#PEAKEND:    310
+#2024/5/2
+#PEAKSTART:  920
+#PEAKEND:    1000
+#2024/6/1
+PEAKSTART:  180
+PEAKEND:    360
+#Base line
+#BASEPARAM: 20
+BASEPARAM: 200
+#Integral for QDC
+#RANGELOW:  10
+#RANGEHIGH: 50
+#RANGELOW:  10
+#RANGEHIGH: 50
+RANGELOW:  10
+RANGEHIGH: 20
+#Pileup Study
+PILELOW:  -55
+PILEHIGH:  -5
+#
+#------------------------------------
+#
+# End of File
