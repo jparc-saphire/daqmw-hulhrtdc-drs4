@@ -1,5 +1,6 @@
 #define E16DAQ
 #include<ios>
+#include <iomanip>
 #include<iostream>
 #include<iomanip>
 #include<cstdlib>
@@ -8,6 +9,7 @@
 #include<functional>
 #include<arpa/inet.h>
 #include <cstdint>
+#include "TMath.h"
 
 #include "Decoder.hh"
 #include "HexDump.hh"

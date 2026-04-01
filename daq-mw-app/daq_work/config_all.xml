@@ -23,7 +23,7 @@
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                      <instName>Drs4QdcReader10.rtc</instName>
-                     <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Drs4QdcReader1/Drs4QdcReader1Comp</execPath>
+                     <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Drs4QdcReader1/Drs4QdcReader1Comp</execPath>
                       <confFile>/tmp/daqmw/rtc.conf</confFile>
                       <startOrd>8</startOrd>
                       <inPorts>
@@ -36,14 +36,14 @@
                           <param pid="srcAddr">192.168.34.18</param>
                           <param pid="srcPort">24</param>
                           <param pid="hasBoardId">true</param>
-                          <param pid="execSetDaqReg">/home/e16/work/daqmw-hulhrtdc-drs4/vme_drs_v5.1_tdc/daq/bin/set_daqreg</param>
+                          <param pid="execSetDaqReg">/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/vme_drs_v5.1_tdc/daq/bin/set_daqreg</param>
                      </params>
                 </component>
                 <component cid="MznHRTdcReader10">
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                      <instName>MznHRTdcReader10.rtc</instName>
-                     <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader1/MznHRTdcReader1Comp</execPath>
+                     <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader1/MznHRTdcReader1Comp</execPath>
                       <confFile>/tmp/daqmw/rtc.conf</confFile>
                       <startOrd>7</startOrd>
                       <inPorts>
@@ -67,7 +67,7 @@
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                      <instName>MznHRTdcReader20.rtc</instName>
-                     <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader2/MznHRTdcReader2Comp</execPath>
+                     <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader2/MznHRTdcReader2Comp</execPath>
                       <confFile>/tmp/daqmw/rtc.conf</confFile>
                       <startOrd>6</startOrd>
                       <inPorts>
@@ -91,7 +91,7 @@
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                      <instName>MznHRTdcReader30.rtc</instName>
-                     <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader3/MznHRTdcReader3Comp</execPath>
+                     <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/MznHRTdcReader3/MznHRTdcReader3Comp</execPath>
                       <confFile>/tmp/daqmw/rtc.conf</confFile>
                       <startOrd>5</startOrd>
                       <inPorts>
@@ -116,7 +116,7 @@
                    <hostAddr>127.0.0.1</hostAddr>
                    <hostPort>50000</hostPort>
                    <instName>Merger0.rtc</instName>
-                   <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Merger/MergerComp</execPath>
+                   <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Merger/MergerComp</execPath>
                    <confFile>/tmp/daqmw/rtc.conf</confFile>
                    <startOrd>4</startOrd>
                    <inPorts>
@@ -136,7 +136,7 @@
                    <hostAddr>127.0.0.1</hostAddr>
                    <hostPort>50000</hostPort>
                    <instName>BestEffortDispatcher0.rtc</instName>
-                   <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/BestEffortDispatcher/BestEffortDispatcherComp</execPath>
+                   <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/BestEffortDispatcher/BestEffortDispatcherComp</execPath>
                    <confFile>/tmp/daqmw/rtc.conf</confFile>
                    <startOrd>3</startOrd>
                    <inPorts>
@@ -154,7 +154,7 @@
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                     <instName>Monitor0.rtc</instName>
-                    <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Monitor/MonitorComp</execPath>
+                    <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/Monitor/MonitorComp</execPath>
                     <confFile>/tmp/daqmw/rtc.conf</confFile>
                     <startOrd>2</startOrd>
                     <inPorts>
@@ -176,7 +176,7 @@
                     <hostAddr>127.0.0.1</hostAddr>
                     <hostPort>50000</hostPort>
                     <instName>DAQLogger0.rtc</instName>
-                    <execPath>/home/e16/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/DAQLogger/DAQLoggerComp</execPath>
+                    <execPath>/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/daq-mw-app/component/DAQLogger/DAQLoggerComp</execPath>
                     <confFile>/tmp/daqmw/rtc.conf</confFile>
                     <startOrd>1</startOrd>
                     <inPorts>
@@ -185,7 +185,7 @@
                     <outPorts>
                     </outPorts>
                     <params>
-                       <param pid="dirName">/home/e16/work/daqmw-hulhrtdc-drs4/data</param>
+                       <param pid="dirName">/e88/u/e88daq/work/daqmw-hulhrtdc-drs4/data</param>
                        <param pid="isLogging">yes</param>
                        <param pid="maxFileSizeInMegaByte">81920</param>
                     </params>
