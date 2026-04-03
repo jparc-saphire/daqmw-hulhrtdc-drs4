@@ -9,7 +9,6 @@
 <!-- 5. Logger  -->
 <!-- Please rewrite execPath (2 places), confFile (2 places) suitable -->
 <!-- for your directory structure.                                    -->
-<!-- Reader TCP recv timeout (sec): large values delay STOP/reset; use 10–60 for normal runs. -->
 <!-- run.py will create rtc.conf in /tmp/daqmw/rtc.conf               -->
 <!-- If you use run.py, set confFile as /tmp/daqmw/rtc.conf           -->
 <configInfo>
@@ -33,7 +32,7 @@
                           <outPort>out0</outPort>
                       </outPorts>
                       <params>
-                          <param pid="timeout">10</param>
+                          <param pid="timeout">2000</param>
                           <param pid="srcAddr">192.168.34.18</param>
                           <param pid="srcPort">24</param>
                           <param pid="hasBoardId">true</param>
@@ -53,7 +52,7 @@
                           <outPort>out1</outPort>
                       </outPorts>
                       <params>
-                          <param pid="timeout">10</param>
+                          <param pid="timeout">2000</param>
                           <param pid="debug">0</param>
                           <param pid="srcAddr">192.168.34.32</param>
                           <param pid="srcPort">24</param>
@@ -76,7 +75,7 @@
                           <outPort>out2</outPort>
                       </outPorts>
                       <params>
-                          <param pid="timeout">10</param>
+                          <param pid="timeout">2000</param>
                           <param pid="debug">0</param>
                           <param pid="srcAddr">192.168.34.33</param>
                           <param pid="srcPort">24</param>
@@ -99,7 +98,7 @@
                           <outPort>out3</outPort>
                       </outPorts>
                       <params>
-                          <param pid="timeout">10</param>
+                          <param pid="timeout">2000</param>
                           <param pid="debug">0</param>
                           <param pid="srcAddr">192.168.10.80</param>
                           <param pid="srcPort">24</param>
